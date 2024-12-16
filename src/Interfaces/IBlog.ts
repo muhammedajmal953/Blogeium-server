@@ -7,3 +7,4 @@ export interface IBlog extends Document{
     postedBy: any,
     createdAt: Date,
 }
+

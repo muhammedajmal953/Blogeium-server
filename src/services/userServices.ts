@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 
 export class UserServices {
     constructor() { }
-
+ 
     async createUser(data: IUser) {
         try {
             const existingUser = await User.findOne({ email: data.email })
@@ -25,6 +25,8 @@ export class UserServices {
             await newUser.save();
 
             const token = createToken(newUser._id);
+
+            
 
             return {
                 success: true,
@@ -90,7 +92,7 @@ export class UserServices {
             };
         }
     }
-      
+       
     async editUser(id:string,updations:any) {
         try {
             const update=await User.findByIdAndUpdate(id,{$set:updations})

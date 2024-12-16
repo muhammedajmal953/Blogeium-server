@@ -19,6 +19,9 @@ userRouter.route('/user')
 
 userRouter.post('/login', userController.loginUser.bind(userController))
 
+userRouter.post('/isLoggedIn', userController.isLoggedIn.bind(userController))
+userRouter.post('/logout', userController.logout.bind(userController))
+
 
 userRouter.route('/blog')
     .post(userAuth, blogController.createBlog.bind(blogController))

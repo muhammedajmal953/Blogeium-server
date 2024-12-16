@@ -1,17 +1,22 @@
-import express, { urlencoded } from "express";
+import express from "express";
 import dotenv from "dotenv"
 import { connectDB } from "./utils/connection";
 import cors from "cors"
 import userRouter from "./routes/userRoutes";
-import { url } from "inspector";
+import cookieParser from 'cookie-parser';
+
 dotenv.config()
 const app = express()
 connectDB()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:4200',
+    credentials:true
+}))
 
+app.use(cookieParser())
 
 app.use('/',userRouter)
 

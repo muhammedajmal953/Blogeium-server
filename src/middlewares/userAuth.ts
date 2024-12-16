@@ -13,7 +13,7 @@ declare global {
 export function userAuth(req: Request, res: Response, next: NextFunction) {
     try {
         const auth = req.headers.authorization
-        const token = auth?.split(' ')[1]
+        const {token} = req.cookies
 
 
 

@@ -1,3 +1,4 @@
+import { log } from "node:console";
 import { IBlog } from "../Interfaces/IBlog";
 import { Blog } from "../models/blogModel";
 import mongoose from "mongoose";
@@ -62,12 +63,26 @@ export class BlogServices {
 
     async getBlog(id: string) {
         try {
-            const blog = await Blog.findById(id)
+
+            console.log(id);
+            
+            const blog = await Blog.aggregate([{
+                $match: { _id:new mongoose.Types.ObjectId(id) }
+            },
+            {   
+                $lookup: {
+                    from: 'users',
+                    as: 'userData',
+                    localField: 'postedBy',
+                    foreignField:'_id'
+                }
+            }
+            ])
 
             return {
                 success: true,
                 message: 'Blog fetched Seccussfully',
-                data: blog
+                data: blog[0]
             }
         } catch (error) {
             console.log("Error from BlogService.getBlog", error);
@@ -79,9 +94,14 @@ export class BlogServices {
     async getAllBlogs(id: string = '') {
         try {
 
-            const blogs = await Blog.find()
-
-
+            const blogs = await Blog.aggregate([{
+                $lookup: {
+                    localField: 'postedBy',
+                    foreignField: '_id',
+                    as: 'userData',
+                    from: 'users'
+                }
+            }])
             return {
                 success: true,
                 message: 'Blog fetched Seccussfully',

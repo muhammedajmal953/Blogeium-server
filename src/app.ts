@@ -9,15 +9,13 @@ dotenv.config()
 const app = express()
 connectDB()
 
-
- 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
     origin: process.env.Front_End,
     credentials:true
 }))
-
+ 
 app.use(cookieParser())
 
 app.use('/',userRouter)

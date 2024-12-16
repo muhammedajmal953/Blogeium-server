@@ -18,7 +18,10 @@ app.use(cors({
  
 app.use(cookieParser())
 
-app.use('/',userRouter)
+app.use('/', userRouter)
+
+console.log('frontendurl',process.env.Front_End);
+
 
 app.listen(process.env.PORT, () => {
     console.log('blog hub is connected')

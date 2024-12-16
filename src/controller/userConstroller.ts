@@ -38,6 +38,7 @@ export class UserController {
 
             res.cookie('token', result.data, {
                 httpOnly: true, 
+                secure:true,
                 sameSite: 'none',
                 expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000), 
             })

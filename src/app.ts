@@ -12,7 +12,7 @@ connectDB()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: process.env.Front_End,
+    origin: 'https://blogium-client-ysly.vercel.app/',
     credentials:true
 }))
  

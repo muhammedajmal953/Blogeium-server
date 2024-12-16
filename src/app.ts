@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 dotenv.config()
 const app = express()
 connectDB()
-
+ 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({

@@ -1,6 +1,6 @@
-# Article Server (Node.js Backend)
+# Blogium Server (Node.js Backend)
 
-This is a back-end server for managing articles, built using **Node.js** and **Express**. It allows for CRUD operations, authentication using JWT, and is connected to a **MongoDB** database via **Mongoose**.
+This is a back-end server for managing Blogs, built using **Node.js** and **Express**. It allows for CRUD operations, authentication using JWT, and is connected to a **MongoDB** database via **Mongoose**.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ This is a back-end server for managing articles, built using **Node.js** and **E
 
 ## Description
 
-This application serves as the back-end for a blog system, where you can manage articles, handle user authentication, and perform CRUD operations. It uses **Express** to set up routes, **Mongoose** to interact with MongoDB, and **JWT** for secure user authentication.
+This application serves as the back-end for a blog system, where you can manage Blogs, handle user authentication, and perform CRUD operations. It uses **Express** to set up routes, **Mongoose** to interact with MongoDB, and **JWT** for secure user authentication.
 
 ## Technologies
 
@@ -52,7 +52,7 @@ This application serves as the back-end for a blog system, where you can manage 
 
 4. **Environment Variables**: Details which environment variables are required, such as the MongoDB connection string and the JWT secret key.
 
-5. **API Endpoints**: Lists the key API endpoints for interacting with articles, including the necessary HTTP methods (GET, POST, PUT, DELETE).
+5. **API Endpoints**: Lists the key API endpoints for interacting with Blogs, including the necessary HTTP methods (GET, POST, PUT, DELETE).
 
 6. **Contributing**: Gives guidelines for contributing to the project via forking, creating feature branches, and submitting pull requests.
 
@@ -64,5 +64,3 @@ This README provides a complete guide for anyone looking to set up or contribute
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/username/article-server.git
-cd article-server
